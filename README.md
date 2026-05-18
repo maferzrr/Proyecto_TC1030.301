@@ -15,6 +15,5 @@ Se implementan los siguientes elementos:
 
 * Cliente: persona registrada en el banco que puede poseer una o más cuentas.
 * Empleado: representa al personal del banco con funciones asignadas según su rol.
-* Cuenta corriente: permite retiros con límite de sobregiro definido.
 * Cuenta de ahorro: genera intereses periódicos sobre el saldo disponible.
 * Cuenta de crédito: permite ver el crédito disponible, así como ver la tasa de intereses moratorios.
