@@ -4,6 +4,8 @@ administrar el dinero de forma segura, realizar transacciones y hacer crecer nue
 ahorros a través del tiempo. Sin embargo, detrás de cada cuenta y cada operación existe 
 una estructura de datos y procesos que hacen posible su funcionamiento.
 
+------------
+### ⚙️Funcionalidad
 Este proyecto presenta un sistema bancario básico desarrollado en C++ que simula las 
 operaciones esenciales de un banco: registro de clientes, apertura de cuentas y 
 cálculo de intereses.
@@ -14,10 +16,6 @@ Se implementan los siguientes elementos:
 * Empleado: representa al personal del banco con funciones asignadas según su rol.
 * Cuenta de ahorro: genera intereses periódicos sobre el saldo disponible.
 * Cuenta de crédito: permite ver el crédito disponible, así como ver la tasa de intereses moratorios.
-
-------------
-### ⚙️Funcionalidad
-This is a text.
 
 ------------
 
