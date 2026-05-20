@@ -5,7 +5,7 @@ ahorros a través del tiempo. Sin embargo, detrás de cada cuenta y cada operaci
 una estructura de datos y procesos que hacen posible su funcionamiento.
 
 ------------
-### ⚙️Funcionalidad
+### Funcionalidad
 Este proyecto presenta un sistema bancario básico desarrollado en C++ que simula las 
 operaciones esenciales de un banco: registro de clientes, apertura de cuentas y 
 cálculo de intereses.
@@ -19,18 +19,18 @@ Se implementan los siguientes elementos:
 
 ------------
 
-### 🚦Instrucciones de Compilación
+### Instrucciones de Compilación
 This is a text.
 
 
 ------------
 
-### ✏️ Consideraciones
+### Consideraciones
 This is a text.
 
 ------------
 
-#####  👤Autor
+##### Autor
 - María Fernanda Zetina Reyes | A01709799
 - Ing. Tecnologías Computacionales
 - Materia: TC1030.301
