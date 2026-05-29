@@ -1,18 +1,19 @@
-// Classs Customer
+// Class Customer
 
 # ifndef CUSTOMER_H
 # define CUSTOMER_H
 
 # include "Person.h"
-# include "SavingsAccount.h"
-# include "CreditAccount.h"
+# include "Account.h"
 # include <vector>
+# include <iostream>
+
+using namespace std;
 
 class Customer : public Person {
     private:
-    // Atributos
-    vector<SavingsAccount> sAccount;
-    vector<CreditAccount> cAccount;
+    // Attributes
+    vector<Account*> accounts;
 
     public:
     // Empty constructor
@@ -23,15 +24,17 @@ class Customer : public Person {
 
     // Methods
     // Function pus_back to add elements into the vector
-    void addSavingsAccount(SavingsAccount newSavingsAccount){
-        sAccount.push_back(newSavingsAccount);
-    }
+    // Added the account pointer 
 
-    void addCreditAccount(CreditAccount newCreditAccount){
-        cAccount.push_back(newCreditAccount);
+    void addAccount(Account* newAccount){
+        accounts.push_back(newAccount);
     }
-
     
+    void showAccounts(){
+        for (size_t i = 0; i < accounts.size(); i++) {
+            cout << "Account Balance: " << accounts[i]->getBalance() << endl;
+         }
+    } 
 
 };
 

@@ -12,44 +12,45 @@ using namespace std;
 
 int main() {
     
+    // 1. Client
     Customer client1("Maria Fernanda", 101);
     
+    // 2. Creating accounts using pointers
+    Account* savings = new SavingsAccount(5000.0, 12345, 7.5);
+    Account* credit = new CreditAccount(1000.0, 67890, 5000.0, 50.0);
     
-    SavingsAccount savings(5000.0, 0.05, 12345);
-    CreditAccount credit(1000.0, 67890, 5000.0, 50.0);
+    // 3. Add accounts
+    client1.addAccount(savings);
+    client1.addAccount(credit);
     
-    
-    client1.addSavingsAccount(savings);
-    client1.addCreditAccount(credit);
-    
-    cout << "--- Client Registration ---" << endl;
-    cout << "Client: " << "Maria Fernanda" << " (ID: 101) successfully registered." << endl;
-    cout << "Accounts added succesfully." << endl << endl;
+    cout << "--- Client Registration ---\n" << endl;
+    cout << "Client: Maria Fernanda (ID: 101) successfully registered." << endl;
 
+    // 4. Show balances
+    cout << "--- Account Balances ---\n" << endl;
+    client1.showAccounts(); 
+    cout << endl;
     
-    Employee emp1("Juan Perez", 999, 15000.0, "Finance");
+    // 5. Employee
+    Employee emp1("Rashell Aleck", 999, 15000.0, "Finance");
     
-    cout << "--- Employee Registration ---" << endl;
-    cout << "Employee: " << "Juan Perez" << endl;
-    cout << "Department: " << "Finanzas" << endl;
+    cout << "--- Employee Registration ---\n" << endl;
+    cout << "Employee: " << "Rashell Aleck" << endl;
+    cout << "Department: " << "Finance" << endl;
     cout << "Action: " << emp1.performingDuties() << endl << endl;
     
-    
-    cout << "--- Vacation Request ---" << endl;
+    cout << "--- Vacation Request ---\n" << endl;
     int days1 = 15;
+    cout << "Requesting " << days1 << " days: ";
+    if(emp1.requestLeaveDays(days1)) {
+        cout << "Approved" << endl;
+    } else {
+        cout << "Denied" << endl;
+    }
     
-    if (emp1.requestLeaveDays(days1)) {
-        cout << "Request of de " << days1 << " dias: APROBADA." << endl;
-    } else {
-        cout << "Request of " << days1 << " dias: RECHAZADA." << endl;
-    }
-
-    int days2 = 45;
-    if (emp1.requestLeaveDays(days2)) {
-        cout << "Request of " << days2 << " days: APPROVED." << endl;
-    } else {
-        cout << "Request of " << days2 << " days: DENIED." << endl;
-    }
-
+    // 6. Free heap memory (IMPORTANT)
+    delete savings;
+    delete credit;
+    
     return 0;
 }

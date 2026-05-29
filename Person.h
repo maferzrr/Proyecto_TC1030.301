@@ -21,6 +21,13 @@ public:
     // Constructor with parameters
     Person(string nom, int ident) : name(nom), id(ident){};
 
+    // Methods
+
+    void getInfo(){
+        cout << "Name: " << name << endl;
+        cout << "ID: " << id << endl;
+    };
+
 };
 
 # endif

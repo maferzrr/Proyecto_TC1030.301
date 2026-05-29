@@ -3,54 +3,32 @@
 # ifndef SAVINGSACCOUNT_H
 # define SAVINGSACCOUNT_H
 
+# include "Account.h"
 # include <iostream>
 
 using namespace std;
 
-class SavingsAccount{
+class SavingsAccount: public Account {
 
 private:
     // Attributes
-    float balance;
     float interestRate;
-    int accountNumber;
+  
 
 public: 
 
     // Empty cosntructor
-    SavingsAccount(): balance(0), interestRate(7.5), accountNumber(0){}
+    SavingsAccount(): Account(), interestRate(7.5){}
 
     // Constructor with parameters
-    SavingsAccount( float bal, float inRate, int accNum): balance(bal), interestRate(inRate), accountNumber(accNum){};
+    SavingsAccount( float bal, int accNum, float inRate): Account(bal, accNum), interestRate(inRate){}
 
     // Getters 
-    float getBalance(){
-        return balance;
-    }
 
     float getInterestRate() const {
         return interestRate;
     }
 
-    int getAccountNumber() const {
-        return accountNumber;
-    }
-
-    // Methods
-
-    float deposit(float amount){
-        return balance += amount;
-    }
-
-    float withdraw(float amount){
-        if (balance > 0 and amount <= balance){
-            return balance -= amount;
-        }
-        else {
-            cout << "Insufficient balance" << endl;
-            return balance;
-        }
-    }
 
 };
 
