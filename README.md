@@ -22,7 +22,7 @@ Se implementan los siguientes elementos:
 ### Instrucciones de Compilación
 
 - Descargue todos los documentos adjuntos (a excepción de el diagrama UML).
-- Desde la terminal, siga los pasos de compalación para su sistema operativo y compile únicamente el main.
+- Desde la terminal, siga los pasos de compilación para su sistema operativo y compile únicamente el archivo "VaultCore.cpp".
 
 #### Comando de compilación
   - g++ [nombre del archivo.cpp] -o [nombre del ejecutable a crear]
