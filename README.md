@@ -29,8 +29,14 @@ Se implementan los siguientes elementos:
 
 ------------
 
-### Consideraciones
-This is a text.
+### Casos en los que el proyecto dejarría de funcionar
+#### Errores de Redondeo 
+- Uso del tipo de dato float para almacenar saldos y tasas de interés. Descrepancias y pérdida de precisión centavo a centavo tras múltiples operaciones financieras.
+#### Vulnerabilidad en Saldos 
+- Los métodos withdraw y deposit no validan que el monto sea positivo.
+#### Falta de Control en Límites de Crédito
+- En CreditAccount, el saldo (balance) se maneja de forma genérica heredada de Account y no se conecta lógicamente con el atributo credit.
+- El método withdraw no verifica si el retiro supera el límite de crédito disponible, permitiendo al cliente gastar dinero infinito.
 
 ------------
 
