@@ -29,7 +29,7 @@ Se implementan los siguientes elementos:
 
 ------------
 
-### Casos en los que el proyecto dejarría de funcionar
+### Casos en los que el proyecto dejaría de funcionar
 #### Errores de Redondeo 
 - Uso del tipo de dato float para almacenar saldos y tasas de interés. Descrepancias y pérdida de precisión centavo a centavo tras múltiples operaciones financieras.
 #### Vulnerabilidad en Saldos 
