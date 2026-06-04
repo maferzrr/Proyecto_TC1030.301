@@ -10,29 +10,55 @@ using namespace std;
 
 class CreditAccount : public Account {
 
-private:
-    // Attributes
-    float credit;
-    float latePaymentInterest;
+    private:
+        // Atributos
+        float credit;
+        float latePaymentInterest;
 
-public: 
+    public: 
 
-    // Empty constructor
-    CreditAccount(): Account() ,credit(0), latePaymentInterest(50){}
+        // Constructor default
+        CreditAccount(): Account() ,credit(0), latePaymentInterest(50){}
 
-    // Constructor with parameters
-    CreditAccount(float bal, int accNum, float cre, float payInt): Account(bal, accNum), credit(cre), latePaymentInterest(payInt){}
-    
-// Getters
+        // Constructor con parametros
+        CreditAccount(float bal, int accNum, float cre, float payInt): Account(bal, accNum), credit(cre), latePaymentInterest(payInt){}
+        
 
-float getCredit(){
+        // Métodos
+        float getCredit();
+        float getLatePaymentInterest();
+        float withdraw(float amount);
+        float deposit(float amount);
+        float getBalance();
+
+};
+
+// Métodos definidos
+
+float CreditAccount::getCredit(){
     return credit;
 }
 
-float getLatePaymentInterest(){
+float CreditAccount::getLatePaymentInterest(){
     return latePaymentInterest;
 }
 
-};
+float CreditAccount::withdraw(float amount){
+        if (balance > 0 and amount <= balance){
+            return balance -= amount;
+        }
+        else {
+            cout << "Balance insuficiente" << endl;
+            return balance;
+        }
+    }
+
+float CreditAccount::deposit(float amount){
+    return balance += amount;
+}
+
+float CreditAccount::getBalance(){
+    return balance;
+}
 
 # endif

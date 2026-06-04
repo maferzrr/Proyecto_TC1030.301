@@ -1,4 +1,4 @@
-// Class Account
+// Abstract Class Account
 
 # ifndef ACCOUNT_H
 # define ACCOUNT_H
@@ -9,37 +9,44 @@ using namespace std;
 
 class Account {
     protected:
-
-    // Attributes
-    float balance;
-    int accountNumber;
+        // Atributos
+        float balance;
+        int accountNumber;
 
     public:
-    // Empty constructor
-    Account(): balance(0.0), accountNumber(0) {}
+        // Constructor default
+        Account(): balance(0.0), accountNumber(0) {}
 
-    // Default constructor
-    Account(float bal, int accNum): balance(bal), accountNumber(accNum) {}
+        // Constructor con parametros
+        Account(float bal, int accNum): balance(bal), accountNumber(accNum) {}
 
-    // Methods
+        // Métodos
+        virtual float withdraw (float amount);
+        virtual float deposit (float amount);
 
-    virtual float withdraw(float amount){
-        if (balance > 0 and amount <= balance){
-            return balance -= amount;
-        }
-        else {
-            cout << "Insufficient balance" << endl;
-            return balance;
-        }
-    }
+        // Método para forzar clase abstracta
+        // Preguntar a Frida sobre las clases abstractas
+        //virtual void whatever() = 0;
 
-     virtual float deposit(float amount){
-        return balance += amount;
-    }
-
-    virtual float getBalance(){
-        return balance;
-    }
+        float getBalance();
+    
 };
 
+// Métodos definidos
+float Account::withdraw(float amount){
+    if (balance > 0 && amount <= balance){
+        return balance -= amount;
+    } else {
+        cout << "Insufficient balance" << endl;
+        return balance;
+    }
+}
+
+float Account::deposit(float amount){
+    return balance += amount;
+}
+
+float Account::getBalance(){
+    return balance;
+}
 # endif

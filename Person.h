@@ -9,24 +9,21 @@
 using namespace std;
 
 class Person {
-protected:
-    // Attributes
-    string name;
-    int id;
+    protected:
+        // Atributos
+        string name;
+        int id;
 
-public:
-    // Empty constructor
-    Person(): name(""), id(0) {};
+    public:
+        // Constructor default 
+        Person(): name(""), id(0) {};
 
-    // Constructor with parameters
-    Person(string nom, int ident) : name(nom), id(ident){};
+        // Constructor con parámetros
+        Person(string nom, int ident) : name(nom), id(ident){};
 
-    // Methods
-
-    void getInfo(){
-        cout << "Name: " << name << endl;
-        cout << "ID: " << id << endl;
-    };
+        // Métodos
+        // función "pure virtual"
+        virtual void getInfo() = 0;
 
 };
 

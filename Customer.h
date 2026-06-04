@@ -12,30 +12,43 @@ using namespace std;
 
 class Customer : public Person {
     private:
-    // Attributes
+    // Atributos
     vector<Account*> accounts;
 
     public:
-    // Empty constructor
+    // Constructor default
     Customer(): Person("",0){}
 
-    // Constructor with parameters
+    // Constructor con parámetros
     Customer(string nom, int ident) : Person (nom, ident){};
 
-    // Methods
-    // Function pus_back to add elements into the vector
-    // Added the account pointer 
-
-    void addAccount(Account* newAccount){
-        accounts.push_back(newAccount);
-    }
+    // Métodos
     
-    void showAccounts(){
-        for (size_t i = 0; i < accounts.size(); i++) {
-            cout << "Account Balance: " << accounts[i]->getBalance() << endl;
-         }
-    } 
+    void getInfo();
+
+    void addAccount(Account* newAccount);
+    
+    void showAccounts();
 
 };
+
+// Métodos definidos
+
+void Customer::getInfo(){
+    cout << name; 
+    cout << id;
+}
+
+// push_back para añadir elementos al vector
+
+void Customer::addAccount(Account* newAccount){
+        accounts.push_back(newAccount);
+    }
+
+void Customer::showAccounts(){
+        for (size_t i = 0; i < accounts.size(); i++) {
+            cout << "Account Balance: " << accounts[i]->getBalance() << endl;
+    }
+}
 
 # endif
