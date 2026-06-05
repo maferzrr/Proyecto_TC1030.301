@@ -17,6 +17,11 @@ Se implementan los siguientes elementos:
 * Cuenta de ahorro: genera intereses periódicos sobre el saldo disponible.
 * Cuenta de crédito: permite ver el crédito disponible, así como ver la tasa de intereses moratorios.
 
+Dentro del proyecto, se permite: 
+- Crear cliente (con nombre y ID de cliente)
+- Crear empleado (con su nombre, ID de empleado, departamento y salario)
+- Añadir cuenta (de tipo ahorro o de tipo crédito)
+- Listar empleados o clientes (con sus carcterísticas)
 ------------
 
 ### Instrucciones de Compilación
