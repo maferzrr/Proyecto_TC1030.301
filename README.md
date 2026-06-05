@@ -28,15 +28,23 @@ Se implementan los siguientes elementos:
   - g++ [nombre del archivo.cpp] -o [nombre del ejecutable a crear]
 
 ------------
-
 ### Casos en los que el proyecto dejaría de funcionar
-#### Errores de Redondeo 
-- Uso del tipo de dato float para almacenar saldos y tasas de interés. Descrepancias y pérdida de precisión centavo a centavo tras múltiples operaciones financieras.
-#### Vulnerabilidad en Saldos 
-- Los métodos withdraw y deposit no validan que el monto sea positivo.
-#### Falta de Control en Límites de Crédito
-- En CreditAccount, el saldo (balance) se maneja de forma genérica heredada de Account y no se conecta lógicamente con el atributo credit.
-- El método withdraw no verifica si el retiro supera el límite de crédito disponible, permitiendo al cliente gastar dinero infinito.
+#### Destructores virtuales faltantes
+- Las clases con funciones virtuales, al no contar con un desturctor virtual, el comportamiento es indefinido y probablemente solo se liberará la parte de la clase base, no la de la clase derivada.
+
+#### Validación de entradas
+El menú interactivo en VaultCore.cpp es altamente vulnerable a errores del usuario:
+
+- Entradas de tipo incorrecto: Si el usuario ingresa una letra cuando el sistema espera un entero para opcion, id, saldo o tasa, el flujo cin entrará en estado de error. A partir de ese momento, el programa ignorará futuras lecturas, causando un bucle infinito en el do-while al intentar leer la variable opcion.
+
+- Desbordamiento: No hay validación para valores negativos o extremadamente grandes en campos como saldo o salario.
+
+#### Falta de validación en el tipo de cuenta (enum ausente)
+En VaultCore.cpp, la elección del tipo de cuenta depende de un número (1 para Ahorros, 2 para Crédito).
+
+- Si el usuario ingresa un número distinto (como 3 o 99), el código simplemente no añade ninguna cuenta al cliente y continúa.
+
+- No hay una estructura de control fuerte (como un enum o una validación estricta) que asegure que el objeto creado sea consistente con el tipo solicitado. Esto hace que el sistema sea propenso a estados inconsistentes donde un usuario cree que creó una cuenta pero el sistema no la registró.
 
 ------------
 
