@@ -23,8 +23,7 @@ class Account {
         // Métodos
         virtual float withdraw(float amount) = 0;
         virtual float deposit(float amount) = 0;
-
-        float getBalance();
+        virtual float getBalance();
     
 };
 

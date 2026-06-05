@@ -44,8 +44,8 @@ float CreditAccount::getLatePaymentInterest(){
 }
 
 float CreditAccount::withdraw(float amount){
-        if (balance > 0 and amount <= balance){
-            return balance -= amount;
+        if (amount > 0 && (balance + amount) <= credit){
+            return balance += amount;
         }
         else {
             cout << "Balance insuficiente" << endl;
@@ -54,11 +54,19 @@ float CreditAccount::withdraw(float amount){
     }
 
 float CreditAccount::deposit(float amount){
-    return balance += amount;
+    if (amount > 0){
+        balance -= amount; 
+        cout << "Pago realizado con exito. Deuda actual: $" << balance << endl;
+        return balance;
+    }
+    else {
+        cout << "Monto de pago invalido" << endl;
+        return balance;
+    }
 }
 
 float CreditAccount::getBalance(){
-    return balance;
+    return credit - balance;
 }
 
 # endif

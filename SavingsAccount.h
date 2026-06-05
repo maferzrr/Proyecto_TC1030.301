@@ -38,7 +38,7 @@ float SavingsAccount::getInterestRate() const {
 
 
 float SavingsAccount::withdraw(float amount){
-    if (balance > 0 and amount <= balance){
+    if (amount > 0 && amount <= balance){
         return balance -= amount;
     }
     else {
@@ -48,7 +48,13 @@ float SavingsAccount::withdraw(float amount){
 }
 
 float SavingsAccount::deposit(float amount){
-    return balance += amount;
+    if (amount > 0){
+        return balance += amount; 
+    }
+    else {
+        cout << "Monto de deposito invalido" << endl;
+        return balance;
+    }
 }
 
 float SavingsAccount::getBalance(){
