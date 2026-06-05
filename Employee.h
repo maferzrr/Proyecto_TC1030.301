@@ -39,8 +39,7 @@ class Employee : public Person{
 // Define Methods
 
 void Employee::getInfo(){
-    cout << name; 
-    cout << id;
+     cout << name << "(ID:" << id << ")" << "- Department:" << department;
 }
 
 float Employee::getSalary(){

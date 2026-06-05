@@ -35,8 +35,7 @@ class Customer : public Person {
 // Métodos definidos
 
 void Customer::getInfo(){
-    cout << name; 
-    cout << id;
+    cout << name << "(ID:" << id << ")";
 }
 
 // push_back para añadir elementos al vector
