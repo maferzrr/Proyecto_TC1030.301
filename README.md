@@ -26,11 +26,21 @@ Dentro del proyecto, se permite:
 
 ### Instrucciones de Compilación
 
-- Descargue todos los documentos adjuntos (a excepción de el diagrama UML).
+- Estos pasos son instrucciones para compliar en la terminal.
+- Descargue todos los documentos adjuntos (o el archivo en conjunto .zip y descomprímalo).
 - Desde la terminal, siga los pasos de compilación para su sistema operativo y compile únicamente el archivo "VaultCore.cpp".
 
 #### Comando de compilación
+Desde la terminal, escriba el comando de compilación con el nombre del archivo.
   - g++ [nombre del archivo.cpp] -o [nombre del ejecutable a crear]
+
+#### Ejecución 
+Una vez creado el ejecutable, córralo según su sistema operativo
+Para entornos Linux / MacOs / Laboratorios Unix:
+- ./nombre_del_ejecutable
+
+Para entornos Windows:
+- nombre_del_ejecutable.exe
 
 ------------
 ### Casos en los que el proyecto dejaría de funcionar
