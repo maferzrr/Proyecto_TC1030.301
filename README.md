@@ -28,7 +28,7 @@ Dentro del proyecto, se permite:
 
 - Estos pasos son instrucciones para compliar en la terminal.
 - Descargue todos los documentos adjuntos (o el archivo en conjunto .zip y descomprímalo).
-- Desde la terminal, siga los pasos de compilación para su sistema operativo y compile únicamente el archivo "VaultCore.cpp".
+- Compile únicamente el archivo "VaultCore.cpp".
 
 #### Comando de compilación
 Desde la terminal, escriba el comando de compilación con el nombre del archivo.
