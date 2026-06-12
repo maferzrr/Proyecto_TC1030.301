@@ -36,6 +36,7 @@ Desde la terminal, escriba el comando de compilación con el nombre del archivo.
 
 #### Ejecución 
 Una vez creado el ejecutable, córralo según su sistema operativo
+
 Para entornos Linux / MacOs / Laboratorios Unix:
 - ./nombre_del_ejecutable
 
