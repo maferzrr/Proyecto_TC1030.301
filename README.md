@@ -53,6 +53,8 @@ El menú interactivo en VaultCore.cpp es altamente vulnerable a errores del usua
 
 - Entradas de tipo incorrecto: Si el usuario ingresa una letra cuando el sistema espera un entero para opcion, id, saldo o tasa, el flujo cin entrará en estado de error. A partir de ese momento, el programa ignorará futuras lecturas, causando un bucle infinito en el do-while al intentar leer la variable opcion.
 
+Límite de dígitos en el Número de Cuenta: El atributo `accountNumber` está implementado utilizando el tipo de dato estándar `int`. Debido a las propiedades y límites de memoria de este tipo de dato en C++, ingresar un número de cuenta con más de 9 dígitos provocará un desbordamiento (*integer overflow*) y causará errores en la ejecución. Al probar el programa, por favor asegúrese de ingresar únicamente valores de 9 dígitos o menos.
+
 - Desbordamiento: No hay validación para valores negativos o extremadamente grandes en campos como saldo o salario.
 
 #### Falta de validación en el tipo de cuenta
